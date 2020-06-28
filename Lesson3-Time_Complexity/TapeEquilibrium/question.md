@@ -21,7 +21,7 @@ We can split this tape in four places:
     - P = 4, difference = |10 − 3| = 7 
 Write a function:
 
-func Solution(A []int) int
+    func Solution(A []int) int
 
 that, given a non-empty array A of N integers, returns the minimal difference that can be achieved.
 
