@@ -34,3 +34,27 @@ func Solution(A []int) int {
 	}
 	return result
 }
+
+func SolutionOptimal(A []int) int {
+	N := len(A)
+	intersections := 0
+	begin := make([]int, N)
+	end := make([]int, N)
+	for i := range A {
+		begin[i] = i - A[i]
+		end[i] = i + A[i]
+	}
+	sort.Ints(begin)
+	sort.Ints(end)
+
+	// Check whether current end point is in between other circle.
+	// To make checking faster, check begin point which is located left side of the current end point.
+	for i, e := range end {
+		n := sort.Search(len(begin), func(i int) bool { return begin[i] > e })
+		intersections += n - 1 - i
+		if intersections > 10000000 {
+			return -1
+		}
+	}
+	return intersections
+}
