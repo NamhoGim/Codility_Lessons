@@ -8,11 +8,11 @@ package solution
 // fmt.Println("this is a debug message")
 
 func Solution(X int, Y int, D int) int {
-    // write your code in Go 1.4
-    if Y - X == 0 {
-        return 0
-    } else if (Y - X) % D == 0 {
-        return (Y - X) / D
-    }
-    return (Y - X) / D + 1
+	// write your code in Go 1.4
+	if Y-X == 0 {
+		return 0
+	} else if (Y-X)%D == 0 {
+		return (Y - X) / D
+	}
+	return (Y-X)/D + 1
 }
